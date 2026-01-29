@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="mr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Forever & Always ❤️</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --pink:#f6c1cc;
+  --ivory:#fffaf4;
+  --beige:#f4e7da;
+  --gold:#d8b36a;
+  --text:#4a3b3b;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(180deg,#fffaf4,#f6e8ea);
+  color:var(--text);
+  overflow-x:hidden;
+}
+
+/* 🌸 HERO */
+.hero{
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+}
+
+.hero h1{
+  font-family:'Great Vibes',cursive;
+  font-size:3rem;
+  color:#b76e79;
+  animation:fadeUp 2s ease;
+}
+
+.hero p{
+  margin-top:12px;
+  font-style:italic;
+  opacity:.85;
+  animation:fadeUp 3s ease;
+}
+
+/* 📝 POEM */
+section{
+  padding:60px 18px;
+}
+
+.poem{
+  background:var(--ivory);
+  border-radius:24px;
+  padding:35px 22px;
+  box-shadow:0 25px 40px rgba(0,0,0,.05);
+}
+
+.poem p{
+  font-family:'Playfair Display',serif;
+  font-size:1.05rem;
+  line-height:1.9;
+  margin-bottom:18px;
+  opacity:0;
+  transform:translateY(20px);
+  animation:reveal 1s forwards;
+}
+
+.poem p:nth-child(n){
+  animation-delay:calc(var(--i) * .12s);
+}
+
+.highlight{
+  background:linear-gradient(transparent 65%, rgba(216,179,106,.35));
+}
+
+/* 📸 PHOTO GALLERY */
+.gallery{
+  display:flex;
+  flex-direction:column;
+  gap:26px;
+}
+
+.photo{
+  background:#fff;
+  padding:12px;
+  border-radius:22px;
+  box-shadow:0 18px 30px rgba(0,0,0,.08);
+  transform:rotate(-1deg);
+}
+
+.photo:nth-child(even){
+  transform:rotate(1deg);
+}
+
+.photo img{
+  width:100%;
+  border-radius:18px;
+}
+
+/* 💌 MESSAGE */
+.message{
+  background:var(--beige);
+  border-radius:24px;
+  padding:40px 24px;
+  font-family:'Great Vibes',cursive;
+  font-size:1.9rem;
+  text-align:center;
+  color:#8b5e63;
+}
+
+/* ❤️ FOOTER */
+footer{
+  text-align:center;
+  padding:30px;
+  font-style:italic;
+  opacity:.85;
+}
+
+/* 🎵 MUSIC */
+.music{
+  position:fixed;
+  top:14px;
+  right:14px;
+  background:#fff;
+  border-radius:50%;
+  padding:10px 14px;
+  box-shadow:0 10px 20px rgba(0,0,0,.15);
+  cursor:pointer;
+  z-index:10;
+}
+
+/* ✨ ANIMATIONS */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px);}
+  to{opacity:1;transform:translateY(0);}
+}
+@keyframes reveal{
+  to{opacity:1;transform:translateY(0);}
+}
+</style>
+</head>
+
+<body>
+
+<!-- 🎵 MUSIC -->
+<div class="music" onclick="toggleMusic()">🎵</div>
+<audio id="bgm" loop>
+<!-- Add romantic instrumental mp3 later -->
+</audio>
+
+<!-- 🌸 HERO -->
+<div class="hero">
+  <h1>Our Love Story</h1>
+  <p>From friendship to destiny</p>
+</div>
+
+<!-- 📝 POEM (UNCHANGED) -->
+<section class="poem">
+<p style="--i:1">मोह म्हणून टाळले ज्या प्रेमाला</p>
+<p style="--i:2" class="highlight">शेवटी समोर उभे ठाकले आहे</p>
+<p style="--i:3">तुझ्या–माझ्यातील त्या संवादाला</p>
+<p style="--i:4">उत्तर नियतीने दिले आहे</p>
+
+<p style="--i:5">मित्र म्हणून सुरुवात केली होती एके काळी</p>
+<p style="--i:6" class="highlight">आता प्रेमात तुझ्या गुंतले आहे</p>
+
+<p style="--i:7">दूर जरी तू, दूर ना भासे</p>
+<p style="--i:8">असा तुझा सहवास हा</p>
+<p style="--i:9">ओळखतोस तू दूर असूनही</p>
+<p style="--i:10">अर्थ माझ्या श्वासातला</p>
+
+<p style="--i:11">बाप्पाच्या आशीर्वादाने झालेली ती भेट</p>
+<p style="--i:12">ती नजर बोलकी आठवते मला</p>
+
+<p style="--i:13">आठवते ती भेट अजूनही</p>
+<p style="--i:14">तो हात तुझा माझ्या हातातला</p>
+
+<p style="--i:15">घेतला जेव्हा तुझा हात हाती</p>
+<p style="--i:16">विसरून गेले हे जग काही क्षणांसाठी</p>
+<p style="--i:17">वाटले थांबावी ही वेळ अजूनही थोडी</p>
+<p style="--i:18">वाढावी आपल्या नात्यातील गोडी</p>
+
+<p style="--i:19">हातावरील मेहंदीत माझ्या</p>
+<p style="--i:20">तू नाव तुझे शोधशील ना</p>
+<p style="--i:21">आयुष्याच्या या वाटेवरती</p>
+<p style="--i:22">तू साथ मला देशील ना</p>
+
+<p style="--i:23">दाटला अंधार जेव्हा</p>
+<p style="--i:24">प्रकाश बनुनी आलास तू</p>
+<p style="--i:25">नाही कळाले कधी, कसे</p>
+<p style="--i:26">माझ्या ओठांवरील हसू झालास तू</p>
+
+<p style="--i:27">पडले होते आजारी जेव्हा</p>
+<p style="--i:28">रात्रभर तूही झोपला नाही</p>
+<p style="--i:29">प्रत्येक वेळी काळजी करुनी</p>
+<p style="--i:30">कधीही तू थकला नाही</p>
+
+<p style="--i:31">स्वतःची आजारी असूनही</p>
+<p style="--i:32">काळजी मात्र माझीच आहे</p>
+<p style="--i:33" class="highlight">वचन देते मी आज तुला की</p>
+<p style="--i:34" class="highlight">मी फक्त आणि फक्त तुझीच आहे</p>
+</section>
+
+<!-- 📸 11 PHOTO MEMORIES -->
+<section>
+<h3 style="text-align:center;margin-bottom:22px;">Our Memories 💞</h3>
+<div class="gallery">
+  <div class="photo"><img src="photo1.jpg"></div>
+  <div class="photo"><img src="photo2.jpg"></div>
+  <div class="photo"><img src="photo3.jpg"></div>
+  <div class="photo"><img src="photo4.jpg"></div>
+  <div class="photo"><img src="photo5.jpg"></div>
+  <div class="photo"><img src="photo6.jpg"></div>
+  <div class="photo"><img src="photo7.jpg"></div>
+  <div class="photo"><img src="photo8.jpg"></div>
+  <div class="photo"><img src="photo9.jpg"></div>
+  <div class="photo"><img src="photo10.jpg"></div>
+  <div class="photo"><img src="photo11.jpg"></div>
+</div>
+</section>
+
+<!-- 💌 LOVE MESSAGE -->
+<section>
+<div class="message">
+Forever yours ❤️
+</div>
+</section>
+
+<footer>
+Made with love ✨
+</footer>
+
+<script>
+const music=document.getElementById('bgm');
+function toggleMusic(){
+  if(music.paused) music.play();
+  else music.pause();
+}
+</script>
+
+</body>
+</html>
