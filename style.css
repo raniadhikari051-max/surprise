@@ -1,0 +1,196 @@
+:root {
+  --pink: #f6c1cc;
+  --ivory: #fffaf4;
+  --beige: #f4e7da;
+  --gold: #d8b36a;
+  --text: #4a3b3b;
+  --accent: #b76e79;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(180deg, #fffaf4, #f6e8ea);
+  color: var(--text);
+  overflow-x: hidden;
+  padding-bottom: 60px;
+}
+
+/* 🧭 NAVIGATION */
+nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-around;
+  padding: 15px 0;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.05);
+  z-index: 100;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  transition: color 0.3s;
+}
+
+nav a:hover, nav a.active {
+  color: var(--accent);
+}
+
+nav a span {
+  font-size: 1.2rem;
+}
+
+/* 🌸 HERO */
+.hero {
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  padding: 20px;
+}
+
+.hero h1 {
+  font-family: 'Great Vibes', cursive;
+  font-size: 3.5rem;
+  color: var(--accent);
+  animation: fadeUp 2s ease;
+}
+
+.hero p {
+  margin-top: 12px;
+  font-style: italic;
+  opacity: .85;
+  animation: fadeUp 3s ease;
+}
+
+/* 📝 CONTENT SECTIONS */
+section {
+  padding: 40px 18px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.card {
+  background: var(--ivory);
+  border-radius: 24px;
+  padding: 35px 22px;
+  box-shadow: 0 25px 40px rgba(0,0,0,.05);
+  margin-bottom: 30px;
+}
+
+.poem p {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  line-height: 2;
+  margin-bottom: 20px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: reveal 1s forwards;
+}
+
+.poem p:nth-child(n) {
+  animation-delay: calc(var(--i) * .1s);
+}
+
+.highlight {
+  background: linear-gradient(transparent 65%, rgba(216,179,106,.35));
+}
+
+/* 📸 PHOTO GALLERY */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.photo {
+  background: #fff;
+  padding: 12px;
+  border-radius: 15px;
+  box-shadow: 0 10px 20px rgba(0,0,0,.08);
+  transition: transform 0.3s;
+}
+
+.photo:hover {
+  transform: scale(1.02) rotate(0deg) !important;
+}
+
+.photo img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+/* 💌 MESSAGE */
+.message-box {
+  background: var(--beige);
+  border-radius: 24px;
+  padding: 50px 30px;
+  font-family: 'Great Vibes', cursive;
+  font-size: 2.2rem;
+  text-align: center;
+  color: #8b5e63;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.05);
+}
+
+/* ❤️ FOOTER */
+footer {
+  text-align: center;
+  padding: 40px 20px 100px;
+  font-style: italic;
+  opacity: .7;
+}
+
+/* 🎵 MUSIC */
+.music {
+  position: fixed;
+  top: 14px;
+  right: 14px;
+  background: #fff;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,.15);
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 1.2rem;
+}
+
+/* ✨ ANIMATIONS */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes reveal {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2.5rem; }
+  .message-box { font-size: 1.8rem; }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gallery - Forever & Always ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- 🎵 MUSIC -->
+  <div class="music" onclick="toggleMusic()">🎵</div>
+  <audio id="bgm" loop src="romantic.mp3"></audio>
+
+  <!-- 🧭 NAVIGATION -->
+  <nav>
+    <a href="index.html"><span>🏠</span>Home</a>
+    <a href="story.html"><span>📖</span>Story</a>
+    <a href="gallery.html" class="active"><span>📸</span>Gallery</a>
+    <a href="message.html"><span>💌</span>Message</a>
+  </nav>
+
+  <div class="hero" style="height: 40vh;">
+    <h1>Our Memories</h1>
+    <p>Captured moments that mean the world</p>
+  </div>
+
+  <section>
+    <div class="gallery">
+      <div class="photo"><img src="photo1.jpg.jpeg"></div>
+      <div class="photo"><img src="photo2.jpg.jpeg"></div>
+      <div class="photo"><img src="photo3.jpg.jpeg"></div>
+      <div class="photo"><img src="photo4.jpg.jpeg"></div>
+      <div class="photo"><img src="photo5.jpg.jpeg"></div>
+      <div class="photo"><img src="photo6.jpg.jpeg"></div>
+      <div class="photo"><img src="photo7.jpg.jpeg"></div>
+      <div class="photo"><img src="photo8.jpg.jpeg"></div>
+      <div class="photo"><img src="photo9.jpg.jpeg"></div>
+      <div class="photo"><img src="photo10.jpg.jpeg"></div>
+      <div class="photo"><img src="photo11.jpg.jpeg"></div>
+    </div>
+  </section>
+
+  <footer>
+    Made with love ✨
+  </footer>
+
+  <script>
+    const music = document.getElementById('bgm');
+    function toggleMusic() {
+      if (music.paused) music.play();
+      else music.pause();
+    }
+  </script>
+
+</body>
+</html>
