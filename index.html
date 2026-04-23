@@ -16,6 +16,11 @@
   <div class="music" onclick="toggleMusic()">🎵</div>
   <audio id="bgm" loop src="romantic.mp3"></audio>
 
+  <!-- 🌙 DAY/NIGHT MODE TOGGLE -->
+  <div class="mode-toggle" onclick="toggleMode()">
+    <span class="toggle-icon">☀️</span>
+  </div>
+
   <!-- 🧭 NAVIGATION (HIDDEN) -->
   <nav></nav>
 
@@ -62,6 +67,26 @@
       }
     }
     createHearts();
+
+    // 🌙 Day/Night Mode
+    function toggleMode() {
+      document.body.classList.toggle('night-mode');
+      const icon = document.querySelector('.toggle-icon');
+      if (document.body.classList.contains('night-mode')) {
+        icon.textContent = '🌙';
+        localStorage.setItem('mode', 'night');
+      } else {
+        icon.textContent = '☀️';
+        localStorage.setItem('mode', 'day');
+      }
+    }
+
+    // Load saved mode
+    const savedMode = localStorage.getItem('mode');
+    if (savedMode === 'night') {
+      document.body.classList.add('night-mode');
+      document.querySelector('.toggle-icon').textContent = '🌙';
+    }
   </script>
 
 </body>

@@ -8,6 +8,71 @@
   --soft-pink: #fce4ec;
 }
 
+body.night-mode {
+  --pink: #2d1f3d;
+  --ivory: #1a1a2e;
+  --beige: #16213e;
+  --gold: #f39c12;
+  --text: #e0e0e0;
+  --accent: #e91e63;
+  --soft-pink: #4a148c;
+  background: linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%) !important;
+}
+
+body.night-mode .card {
+  background: rgba(26, 26, 46, 0.9);
+  border-color: #4a148c;
+  box-shadow: 0 20px 40px rgba(233, 30, 99, 0.2);
+}
+
+body.night-mode .hero h1 {
+  color: #e91e63;
+  text-shadow: 0 0 20px rgba(233, 30, 99, 0.5);
+}
+
+body.night-mode .photo {
+  background: #1a1a2e;
+  box-shadow: 0 10px 30px rgba(233, 30, 99, 0.3);
+}
+
+body.night-mode .photo-caption {
+  color: #e91e63;
+}
+
+body.night-mode .floating-heart {
+  color: #e91e63;
+  opacity: 0.2;
+}
+
+body.night-mode .unique-link {
+  background: #1a1a2e;
+  color: #e91e63;
+  border-color: #4a148c;
+}
+
+body.night-mode .unique-link:hover {
+  background: #4a148c;
+}
+
+body.night-mode .love-counter-mini {
+  background: linear-gradient(135deg, rgba(26,26,46,0.98) 0%, rgba(74,20,140,0.98) 100%);
+  border-color: #4a148c;
+  box-shadow: 0 8px 25px rgba(233, 30, 99, 0.4);
+}
+
+body.night-mode .counter-mini-box {
+  background: #1a1a2e;
+  border-color: #4a148c;
+}
+
+body.night-mode .counter-mini-box span {
+  color: #e91e63;
+}
+
+body.night-mode footer {
+  color: #e0e0e0;
+}
+
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Caveat:wght@400;700&family=Indie+Flower&display=swap');
 
 * {
@@ -657,6 +722,41 @@ footer {
   cursor: pointer;
   z-index: 1000;
   font-size: 1.2rem;
+}
+
+/* 🌙 DAY/NIGHT MODE TOGGLE */
+.mode-toggle {
+  position: fixed;
+  top: 14px;
+  right: 70px;
+  background: #fff;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,.15);
+  cursor: pointer;
+  z-index: 1000;
+  font-size: 1.3rem;
+  transition: all 0.3s;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.mode-toggle:hover {
+  transform: scale(1.1) rotate(20deg);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+body.night-mode .mode-toggle {
+  background: #1a1a2e;
+  box-shadow: 0 10px 20px rgba(233, 30, 99, 0.3);
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
 }
 
 /* ✨ ANIMATIONS */
