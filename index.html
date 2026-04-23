@@ -33,31 +33,6 @@
       <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 15px;">Welcome to Our Space</h2>
       <p>This is a small collection of our memories, our story, and the love we share. Explore the pages to see our journey together.</p>
     </div>
-
-    <!-- 💕 LOVE COUNTER -->
-    <div class="card love-counter-card">
-      <h2 style="font-family: 'Dancing Script', cursive; color: var(--accent); margin-bottom: 25px; font-size: 2.5rem;">Our Love Journey</h2>
-      <p style="font-family: 'Indie Flower', cursive; margin-bottom: 20px; font-size: 1.1rem;">Together since January 10, 2025</p>
-      <div class="counter-grid">
-        <div class="counter-box">
-          <span id="days">0</span>
-          <p>Days</p>
-        </div>
-        <div class="counter-box">
-          <span id="hours">0</span>
-          <p>Hours</p>
-        </div>
-        <div class="counter-box">
-          <span id="minutes">0</span>
-          <p>Minutes</p>
-        </div>
-        <div class="counter-box">
-          <span id="seconds">0</span>
-          <p>Seconds</p>
-        </div>
-      </div>
-      <p style="font-family: 'Caveat', cursive; margin-top: 25px; font-size: 1.3rem; color: var(--accent);">...and counting forever 💕</p>
-    </div>
   </section>
 
   <footer>
@@ -87,26 +62,6 @@
       }
     }
     createHearts();
-
-    // 💕 Love Counter
-    function updateCounter() {
-      const startDate = new Date('January 10, 2025 00:00:00');
-      const now = new Date();
-      const diff = now - startDate;
-
-      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-      document.getElementById('days').textContent = days;
-      document.getElementById('hours').textContent = hours;
-      document.getElementById('minutes').textContent = minutes;
-      document.getElementById('seconds').textContent = seconds;
-    }
-
-    updateCounter();
-    setInterval(updateCounter, 1000);
   </script>
 
 </body>

@@ -19,6 +19,34 @@
   <!-- 🧭 NAVIGATION (HIDDEN) -->
   <nav></nav>
 
+  <!-- 💕 LOVE COUNTER (FIXED CORNER) -->
+  <div class="love-counter-mini">
+    <div class="doodle-top-left">✨</div>
+    <div class="doodle-top-right">💕</div>
+    <div class="doodle-bottom-left">🌸</div>
+    <div class="doodle-bottom-right">✨</div>
+    <h3>Our Love</h3>
+    <div class="counter-mini-grid">
+      <div class="counter-mini-box">
+        <span id="days">0</span>
+        <p>D</p>
+      </div>
+      <div class="counter-mini-box">
+        <span id="hours">0</span>
+        <p>H</p>
+      </div>
+      <div class="counter-mini-box">
+        <span id="minutes">0</span>
+        <p>M</p>
+      </div>
+      <div class="counter-mini-box">
+        <span id="seconds">0</span>
+        <p>S</p>
+      </div>
+    </div>
+    <p class="counter-subtitle">since jan 10, 2025 💖</p>
+  </div>
+
   <div class="hero" style="height: 40vh;">
     <h1>Our Memories</h1>
     <p>Memories that will last a lifetime</p>
@@ -103,6 +131,26 @@
       }
     }
     createHearts();
+
+    // 💕 Love Counter
+    function updateCounter() {
+      const startDate = new Date('January 10, 2025 00:00:00');
+      const now = new Date();
+      const diff = now - startDate;
+
+      const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      document.getElementById('days').textContent = days;
+      document.getElementById('hours').textContent = hours;
+      document.getElementById('minutes').textContent = minutes;
+      document.getElementById('seconds').textContent = seconds;
+    }
+
+    updateCounter();
+    setInterval(updateCounter, 1000);
   </script>
 
 </body>
