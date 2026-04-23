@@ -16,9 +16,27 @@
   <div class="music" onclick="toggleMusic()">🎵</div>
   <audio id="bgm" loop src="romantic.mp3"></audio>
 
-  <!-- 🌙 DAY/NIGHT MODE TOGGLE -->
-  <div class="mode-toggle" onclick="toggleMode()">
-    <span class="toggle-icon">☀️</span>
+  <!-- 🌙 THEME SELECTOR -->
+  <div class="theme-selector">
+    <div class="theme-btn" onclick="toggleThemeMenu()">🎨</div>
+    <div class="theme-dropdown" id="themeDropdown">
+      <div class="theme-option" onclick="setTheme('day')" data-theme="day">
+        <span class="theme-icon">☀️</span>
+        <span>Day Love</span>
+      </div>
+      <div class="theme-option" onclick="setTheme('night')" data-theme="night">
+        <span class="theme-icon">🌙</span>
+        <span>Night Romance</span>
+      </div>
+      <div class="theme-option" onclick="setTheme('sunset')" data-theme="sunset">
+        <span class="theme-icon">🌅</span>
+        <span>Sunset Glow</span>
+      </div>
+      <div class="theme-option" onclick="setTheme('ocean')" data-theme="ocean">
+        <span class="theme-icon">🌊</span>
+        <span>Ocean Breeze</span>
+      </div>
+    </div>
   </div>
 
   <!-- 🧭 NAVIGATION (HIDDEN) -->
@@ -137,25 +155,48 @@
     }
     createHearts();
 
-    // 🌙 Day/Night Mode
-    function toggleMode() {
-      document.body.classList.toggle('night-mode');
-      const icon = document.querySelector('.toggle-icon');
-      if (document.body.classList.contains('night-mode')) {
-        icon.textContent = '🌙';
-        localStorage.setItem('mode', 'night');
-      } else {
-        icon.textContent = '☀️';
-        localStorage.setItem('mode', 'day');
-      }
+    // 🎨 Theme Selector
+    function toggleThemeMenu() {
+      const dropdown = document.getElementById('themeDropdown');
+      dropdown.classList.toggle('show');
     }
 
-    // Load saved mode
-    const savedMode = localStorage.getItem('mode');
-    if (savedMode === 'night') {
-      document.body.classList.add('night-mode');
-      document.querySelector('.toggle-icon').textContent = '🌙';
+    function setTheme(theme) {
+      document.body.className = '';
+      if (theme !== 'day') {
+        document.body.classList.add(theme + '-mode');
+      }
+      localStorage.setItem('theme', theme);
+      
+      // Update active state
+      document.querySelectorAll('.theme-option').forEach(opt => {
+        opt.classList.remove('active');
+        if (opt.dataset.theme === theme) {
+          opt.classList.add('active');
+        }
+      });
+      
+      // Close dropdown
+      document.getElementById('themeDropdown').classList.remove('show');
     }
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem('theme') || 'day';
+    if (savedTheme !== 'day') {
+      document.body.classList.add(savedTheme + '-mode');
+    }
+    document.querySelectorAll('.theme-option').forEach(opt => {
+      if (opt.dataset.theme === savedTheme) {
+        opt.classList.add('active');
+      }
+    });
+
+    // Close dropdown when clicking outside
+    document.addEventListener('click', function(e) {
+      if (!e.target.closest('.theme-selector')) {
+        document.getElementById('themeDropdown').classList.remove('show');
+      }
+    });
 
     // 💕 Love Counter
     function updateCounter() {

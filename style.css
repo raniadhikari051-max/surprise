@@ -73,6 +73,137 @@ body.night-mode footer {
   color: #e0e0e0;
 }
 
+body.sunset-mode {
+  --pink: #ff6b6b;
+  --ivory: #fff5e6;
+  --beige: #ffeaa7;
+  --gold: #fdcb6e;
+  --text: #2d3436;
+  --accent: #e17055;
+  --soft-pink: #fab1a0;
+  background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 50%, #ffecd2 100%) !important;
+}
+
+body.sunset-mode .card {
+  background: rgba(255, 245, 230, 0.9);
+  border-color: #fab1a0;
+  box-shadow: 0 20px 40px rgba(225, 112, 85, 0.2);
+}
+
+body.sunset-mode .hero h1 {
+  color: #e17055;
+  text-shadow: 0 0 20px rgba(225, 112, 85, 0.4);
+}
+
+body.sunset-mode .photo {
+  background: #fff5e6;
+  box-shadow: 0 10px 30px rgba(225, 112, 85, 0.25);
+}
+
+body.sunset-mode .photo-caption {
+  color: #e17055;
+}
+
+body.sunset-mode .floating-heart {
+  color: #e17055;
+  opacity: 0.2;
+}
+
+body.sunset-mode .unique-link {
+  background: #fff5e6;
+  color: #e17055;
+  border-color: #fab1a0;
+}
+
+body.sunset-mode .unique-link:hover {
+  background: #fab1a0;
+}
+
+body.sunset-mode .love-counter-mini {
+  background: linear-gradient(135deg, rgba(255,245,230,0.98) 0%, rgba(250,177,160,0.98) 100%);
+  border-color: #fab1a0;
+  box-shadow: 0 8px 25px rgba(225, 112, 85, 0.35);
+}
+
+body.sunset-mode .counter-mini-box {
+  background: #fff5e6;
+  border-color: #fab1a0;
+}
+
+body.sunset-mode .counter-mini-box span {
+  color: #e17055;
+}
+
+body.sunset-mode footer {
+  color: #2d3436;
+}
+
+body.ocean-mode {
+  --pink: #74b9ff;
+  --ivory: #e0f7fa;
+  --beige: #b2ebf2;
+  --gold: #00cec9;
+  --text: #2c3e50;
+  --accent: #0984e3;
+  --soft-pink: #81ecec;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%) !important;
+}
+
+body.ocean-mode .card {
+  background: rgba(224, 247, 250, 0.9);
+  border-color: #81ecec;
+  box-shadow: 0 20px 40px rgba(9, 132, 227, 0.2);
+}
+
+body.ocean-mode .hero h1 {
+  color: #0984e3;
+  text-shadow: 0 0 20px rgba(9, 132, 227, 0.4);
+}
+
+body.ocean-mode .photo {
+  background: #e0f7fa;
+  box-shadow: 0 10px 30px rgba(9, 132, 227, 0.25);
+}
+
+body.ocean-mode .photo-caption {
+  color: #0984e3;
+}
+
+body.ocean-mode .floating-heart {
+  color: #0984e3;
+  opacity: 0.2;
+}
+
+body.ocean-mode .unique-link {
+  background: #e0f7fa;
+  color: #0984e3;
+  border-color: #81ecec;
+}
+
+body.ocean-mode .unique-link:hover {
+  background: #81ecec;
+}
+
+body.ocean-mode .love-counter-mini {
+  background: linear-gradient(135deg, rgba(224,247,250,0.98) 0%, rgba(129,236,236,0.98) 100%);
+  border-color: #81ecec;
+  box-shadow: 0 8px 25px rgba(9, 132, 227, 0.35);
+}
+
+body.ocean-mode .counter-mini-box {
+  background: #e0f7fa;
+  border-color: #81ecec;
+}
+
+body.ocean-mode .counter-mini-box span {
+  color: #0984e3;
+}
+
+body.ocean-mode footer {
+  color: #2c3e50;
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Caveat:wght@400;700&family=Indie+Flower&display=swap');
 
 * {
@@ -758,6 +889,102 @@ body.night-mode .mode-toggle {
   0%, 100% { transform: scale(1); }
   50% { transform: scale(1.05); }
 }
+
+/* 🎨 THEME SELECTOR */
+.theme-selector {
+  position: fixed;
+  top: 14px;
+  right: 70px;
+  z-index: 1000;
+}
+
+.theme-btn {
+  background: #fff;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 20px rgba(0,0,0,.15);
+  cursor: pointer;
+  font-size: 1.4rem;
+  transition: all 0.3s;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.theme-btn:hover {
+  transform: scale(1.1) rotate(20deg);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.theme-dropdown {
+  position: absolute;
+  top: 55px;
+  right: 0;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  padding: 10px;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-10px);
+  transition: all 0.3s;
+  border: 2px solid var(--soft-pink);
+}
+
+.theme-dropdown.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.theme-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 15px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  color: var(--text);
+}
+
+.theme-option:hover {
+  background: var(--soft-pink);
+  transform: translateX(5px);
+}
+
+.theme-option.active {
+  background: var(--accent);
+  color: white;
+}
+
+.theme-icon {
+  font-size: 1.3rem;
+}
+
+body.night-mode .theme-btn {
+  background: #1a1a2e;
+  box-shadow: 0 10px 20px rgba(233, 30, 99, 0.3);
+}
+
+body.night-mode .theme-dropdown {
+  background: #1a1a2e;
+  border-color: #4a148c;
+}
+
+body.night-mode .theme-option {
+  color: #e0e0e0;
+}
+
+body.night-mode .theme-option:hover {
+  background: #4a148c;
+}
+
 
 /* ✨ ANIMATIONS */
 @keyframes fadeUp {
